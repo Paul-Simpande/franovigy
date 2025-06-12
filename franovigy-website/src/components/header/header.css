@@ -1,0 +1,196 @@
+body{
+    font-size: var(--font-size-body);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+/*============= HEADER ============*/
+.header{
+    background: var(--color-bg-dark);
+    color: var(--color-text-light);
+    height: 90px;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+.header .nav{
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+}
+.header .nav .col{
+    display: flex;
+    flex-direction: column;
+    background: transparent;
+    color: var(--color-text-light);
+    align-items: center;
+    height: 100%;
+    width: auto;
+    flex: 1;
+    min-width: 100px;
+    padding-top: 10px;
+    justify-content: center;
+}
+
+/*---ICON---*/
+.header .nav .col img{
+    height: 50%;
+    cursor: pointer;
+}
+.header .nav .col .company-name{
+    font-size: var(--font-size-small);
+    cursor: pointer;
+}
+
+/*---SEARCH BOX---*/
+.header .nav .col .search-box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 10px;
+    width: 50%;
+    font-size: var(--font-size-small);
+    border-bottom: 2px solid transparent;
+    transition: border-bottom 0.3s ease-in-out;
+}
+.header .nav .col .search-box:hover,
+.header .nav .col .search-box:focus-within {
+    border-bottom: 2px solid var(--color-bg-primary);
+}
+.header .nav .col .search-box .search-icon{
+    color: var(--color-text-light);
+    font-size: var(--font-size-body);
+}
+.header .nav .col .search-box input{
+    width: 150px;
+    padding: 10px;
+    text-align: center;
+    background: var(--color-bg-dark);
+    color: var(--color-text-light);
+    border: none;
+    outline: none;
+}
+.header .nav .col .search-box input::placeholder{
+    color: var(--color-text-light);
+}
+.header .nav .col .search-box input:focus::placeholder{
+    font-weight: normal;
+}
+.header .nav .col .search-box input:focus{
+    font-weight: 900;
+}
+
+/*--- DISCOVER BUTTON ---*/
+.header .nav .col .discover-btn{
+    color: var(--color-text-light);
+    background: transparent;
+    border: none;
+    font-size: var(--font-size-body);
+    cursor: pointer;
+}
+
+/*--- MENU ---*/
+.header .nav .menu{
+    display: flex;
+    flex-direction: row;
+}
+/*--- icon*/
+.header .nav .menu .menu-icon{
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 4.5px;
+    background: transparent;
+    position: relative;
+    right: 0;
+}
+.header .nav .menu .menu-icon .line{
+    width: 30px;
+    height: 3px;
+    background: var(--color-bg-primary);
+    transition: all 0.3s ease;
+}
+.header .nav .menu .menu-icon.active .l1{
+    transform: rotate(45deg) translate(5px, 5px);
+}
+.header .nav .menu .menu-icon.active .l2{
+    opacity: 0;
+}
+.header .nav .menu .menu-icon.active .l3{
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+/*--- menu-box*/
+.header .nav .menu .menu-box {
+    pointer-events: none;
+    height: 500px;
+    position: absolute;
+    top: 95px;
+    right: 20px;
+    transform: translateX(150%);
+    opacity: 0;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+    border-radius: 15px;
+    padding: 50px;
+    background: #b1b1b1;
+    z-index: 1000;
+    transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
+}
+.header .nav .menu .menu-box.active {
+    transform: translateX(0%);
+    opacity: 1;
+    pointer-events: auto;
+}
+.header .nav .menu .menu-box ul{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+}
+.header .nav .menu .menu-box ul li{
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    list-style: none;
+}
+.header .nav .menu .menu-box ul li a{
+    color: var(--color-text-primary);
+    text-decoration: none;
+    font-size: var(--font-size-heading);
+    font-weight: 700;
+}
+
+/*========Media Query ==========*/
+@media (max-width: 768px) {
+    .header{
+        width: 100vw;
+    }
+    .header .nav{
+        justify-content: space-around;
+        align-items: flex-start;
+    }
+    /*---ICON---*/
+    .header .nav .col img{
+        height: 50%;
+        margin: 0;
+    }
+    .header .nav .col .company-name{
+        font-size: 10px;
+        display: none;
+    }
+    /*--- DISCOVER BUTTON ---*/
+    .header .nav .col .discover-btn{
+        font-size: 10px;
+    }
+}
+
