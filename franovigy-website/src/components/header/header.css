@@ -133,16 +133,17 @@ body{
 /*--- menu-box*/
 .header .nav .menu .menu-box {
     pointer-events: none;
-    height: 500px;
+    height: 80vh;
     position: absolute;
     top: 95px;
+    width: 400px;
     right: 20px;
     transform: translateX(150%);
     opacity: 0;
     box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
-    border-radius: 15px;
-    padding: 50px;
-    background: #b1b1b1;
+    border: 10px solid var(--color-bg-primary);
+    padding: 8% 0 0 10px;
+    background: #2c2a2a;
     z-index: 1000;
     transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
 }
@@ -164,7 +165,7 @@ body{
     list-style: none;
 }
 .header .nav .menu .menu-box ul li a{
-    color: var(--color-text-primary);
+    color: var(--color-text-light);
     text-decoration: none;
     font-size: var(--font-size-heading);
     font-weight: 700;
