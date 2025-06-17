@@ -1,0 +1,140 @@
+body {
+    font-family: var(--font-body);
+    font-size: var(--font-size-body);
+    background-color: var(--color-bg-primary);
+    color: var(--color-text-primary);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+section {
+    width: 100vw;
+    /* Removed fixed height to let content decide height */
+}
+
+/*======== HERO SECTION ========*/
+.hero {
+    width: 100%;
+    display: flex;
+    align-items: stretch;
+    gap: 40px;
+    box-sizing: border-box;
+    background-color: var(--color-bg-dark);
+    padding: 50px;
+}
+
+/* === LEFT COLUMN === */
+.hero .left-col {
+    flex: 0.8;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    color: var(--color-text-light);
+    padding-left: 50px;
+}
+
+.hero .left-col .hero-title {
+    padding-bottom: 20px;
+}
+
+.hero .left-col .hero-title h1 {
+    font-family: var(--font-size-heading);
+    font-size: var(--font-size-hero-title);
+    margin: 0;
+}
+
+.hero .left-col .hero-title p {
+    font-family: var(--font-sub);
+    font-size: var(--font-size-subheading);
+    margin-top: 10px;
+}
+
+/* Spacer that pushes CTA down */
+.hero .left-col .spacer {
+    flex: 1;
+}
+
+/* CTA Block */
+.hero .left-col .cta {
+    width: 100%;
+    padding-bottom: 20px;
+}
+
+.hero .left-col .cta p {
+    font-family: var(--font-body);
+    font-size: var(--font-size-cta);
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.hero .left-col .cta .hero-btn {
+    padding: 12px 24px;
+    font-size: var(--font-size-body);
+    background-color: transparent;
+    color: var(--color-text-light);
+    border: 2px solid var(--color-text-light);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.hero .left-col .cta .hero-btn:hover {
+    background-color: var(--color-bg-primary);
+    color: var(--color-text-primary);
+}
+
+/* === RIGHT COLUMN === */
+.hero .right-col {
+    flex: 1.2;
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+}
+
+.hero .right-col img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 720px) {
+    .hero {
+        flex-direction: column;
+        padding: 30px 20px;
+    }
+
+    .hero .left-col, .hero .right-col {
+        width: 100%;
+        height: auto;
+    }
+
+    .hero .right-col img {
+        width: 100%;
+        max-height: 300px;
+        object-fit: contain;
+    }
+
+    .hero .left-col {
+        padding-left: 0;
+        padding-bottom: 30px;
+    }
+
+    .hero .left-col .cta {
+        padding-bottom: 0;
+    }
+
+    .hero .left-col .hero-title h1 {
+        font-size: var(--font-size-heading);
+    }
+
+    .hero .left-col .hero-title p {
+        font-size: var(--font-size-subheading);
+    }
+
+    .hero .left-col .cta p {
+        font-size: var(--font-size-cta);
+    }
+}

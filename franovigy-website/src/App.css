@@ -1,41 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
 :root {
+    /* === Font Families === */
+    --font-title: 'Montserrat', sans-serif;
+    --font-sub: 'PT Serif', serif;
+    --font-body: 'Roboto', sans-serif;
+
     /* === Color Variables === */
     --color-white: #ffffff;
     --color-black: #000000;
 
-    /* Text / Background (interchangeable) */
     --color-bg-primary: var(--color-white);
     --color-text-primary: var(--color-black);
 
     --color-bg-dark: var(--color-black);
     --color-text-light: var(--color-white);
 
-    /* Button Colors */
     --color-red: #e53935;
     --color-orange: #fb8c00;
 
     /* === Font Sizes === */
+    --font-size-hero-title: 4rem;
     --font-size-heading: 2rem;
+    --font-size-subheading: 1.5rem;
     --font-size-body: 1rem;
+    --font-size-cta: 1.2rem;
     --font-size-small: 0.875rem;
-}
-/* Default (Desktop / Laptop) */
-body {
-    font-size: var(--font-size-body);
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
-
-h1 {
-    font-size: var(--font-size-heading);
 }
 
 /* Tablet */
 @media (max-width: 1024px) {
     :root {
+        --font-size-hero-title: 3rem;
         --font-size-heading: 1.75rem;
+        --font-size-subheading: 1.25rem;
         --font-size-body: 0.95rem;
+        --font-size-cta: 1rem;
         --font-size-small: 0.85rem;
     }
 }
@@ -43,8 +43,21 @@ h1 {
 /* Phone */
 @media (max-width: 768px) {
     :root {
+        --font-size-hero-title: 2.25rem;
         --font-size-heading: 1.5rem;
+        --font-size-subheading: 1rem;
         --font-size-body: 0.9rem;
+        --font-size-cta: 0.95rem;
         --font-size-small: 0.8rem;
     }
+}
+
+body {
+    font-family: var(--font-body);
+    font-size: var(--font-size-body);
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    background-color: var(--color-bg-primary);
+    color: var(--color-text-primary);
 }
