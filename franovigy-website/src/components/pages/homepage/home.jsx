@@ -107,6 +107,9 @@ function Home() {
                     </div>
                 </div>
             </section>
+
+            {/*============== LATEST POST SECTION ==============*/}
+
         </>
     );
 }
