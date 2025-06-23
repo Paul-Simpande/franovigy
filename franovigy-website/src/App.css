@@ -21,6 +21,7 @@
 
     /* === Font Sizes === */
     --font-size-hero-title: 4rem;
+    --font-size-hero-sub: 3rem;
     --font-size-heading: 2rem;
     --font-size-subheading: 1.5rem;
     --font-size-body: 1rem;
@@ -32,6 +33,7 @@
 @media (max-width: 1024px) {
     :root {
         --font-size-hero-title: 3rem;
+        --font-size-hero-sub: 2.25rem;
         --font-size-heading: 1.75rem;
         --font-size-subheading: 1.25rem;
         --font-size-body: 0.95rem;
@@ -44,6 +46,7 @@
 @media (max-width: 768px) {
     :root {
         --font-size-hero-title: 2.25rem;
+        --font-size-hero-sub: 2rem;
         --font-size-heading: 1.5rem;
         --font-size-subheading: 1rem;
         --font-size-body: 0.9rem;
