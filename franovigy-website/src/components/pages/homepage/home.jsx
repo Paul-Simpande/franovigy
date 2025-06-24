@@ -8,6 +8,8 @@ import transprtImage from '../../../assets/transport_post.avif';
 import agircultureCons from '../../../assets/agriculter_con.jpeg';
 import logisticsMang from '../../../assets/logistic_mang.jpeg';
 import constructionServ from '../../../assets/construction_ser.jpeg';
+import aboutImg from '../../../assets/about_us.png'
+
 function Home() {
     return (
         <>
@@ -166,6 +168,48 @@ function Home() {
                     <Link to="/">More Services</Link>
                     <div className="skew up"></div>
                     <div className="skew down"></div>
+                </div>
+            </section>
+
+            {/*============== ABOUT US SECTION ==============*/}
+            <section className="section about-us">
+                <div className="container">
+                    <div className="col">
+                        <img className="about-img" src={aboutImg} alt="image" />
+                    </div>
+                    <div className="col">
+                        <div className="container">
+                            <div className="row">
+                                <h1>Our Story</h1>
+                            </div>
+                            <div className="row">
+                                <h3>Who We Are</h3>
+                            </div>
+                            <div className="row">
+                                <p>FRANOVIGY ENTERPRISES LIMITED is a wholly
+                                    Zambian-owned, woman-led enterprise.
+                                    We are dedicated to delivering excellence
+                                    in general construction, supplying a wide
+                                    range of goods and services, and
+                                    expanding our expertise into the
+                                    agribusiness sector. Additionally, we
+                                    offer reliable and efficient transport
+                                    and logistics solutions, ensuring the
+                                    seamless movement of goods and services
+                                    across Zambia
+                                    and beyond.
+                                    <br/>
+                                    <br/>
+                                    By integrating agribusiness and logistics
+                                    into our portfolio, we aim to drive local
+                                    agricultural innovation, contribute to food
+                                    security, empower rural communities, and
+                                    support the efficient flow of commodities
+                                    and materials essential to economic growth.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </section>
         </>
