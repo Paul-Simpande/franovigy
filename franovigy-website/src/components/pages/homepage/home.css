@@ -20,7 +20,7 @@ section {
     gap: 40px;
     box-sizing: border-box;
     background-color: var(--color-bg-dark);
-    padding: 50px;
+    padding: 90px 50px ;
 }
 
 .hero .left-col {
@@ -496,13 +496,28 @@ section {
     .services-list .col {
         width: 100%;
     }
+
+    /*======== LATEST POST SECTION ========*/
+    .about-us{
+        padding: 0;
+        height: auto;
+    }
+    .about-us .container{
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+    }
+    .about-us .container .col{
+        width: 100%;
+    }
 }
 
 @media (max-width: 720px) {
     /*======== HERO SECTION ========*/
     .hero {
         flex-direction: column;
-        padding: 30px 20px;
+        padding: 90px 20px;
     }
 
     .hero .left-col .spacer {
