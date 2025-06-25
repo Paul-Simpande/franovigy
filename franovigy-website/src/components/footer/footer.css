@@ -48,6 +48,8 @@ footer .container .col1 a p {
 
 footer .container .col1 .address {
     margin: 20px 0;
+    justify-content: left;
+    width: 100%;
 }
 
 footer .container .col1 .address p {
@@ -61,6 +63,7 @@ footer .container .col1 .media-links {
     margin-top: 20px;
     display: flex;
     gap: 10px;
+    width: 100%;
 }
 
 footer .container .col1 .media-links a {

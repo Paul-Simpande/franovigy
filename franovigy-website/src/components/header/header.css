@@ -1,15 +1,19 @@
-body{
+/* ========== BASE RESET ========== */
+body {
     font-size: var(--font-size-body);
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
     overflow-x: hidden;
 }
 *, *::before, *::after {
     box-sizing: border-box;
 }
-/*============= HEADER ============*/
-.header{
+
+/* ========== HEADER ========== */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
     background: var(--color-bg-dark);
     color: var(--color-text-light);
     height: 90px;
@@ -17,181 +21,155 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden;
-    box-sizing: border-box;
+    z-index: 1000;
+    transition: transform 0.4s ease-in-out;
 }
-.header .nav{
+.header.hide {
+    transform: translateY(-100%);
+}
+
+/* ========== NAV ========== */
+.nav {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     height: 100%;
     width: 100%;
-    align-items: center;
+    padding: 0 2rem;
 }
-.header .nav .col{
+.col {
     display: flex;
     flex-direction: column;
-    background: transparent;
-    color: var(--color-text-light);
     align-items: center;
-    height: 100%;
-    width: auto;
+    justify-content: center;
     flex: 1;
     min-width: 100px;
-    padding-top: 10px;
-    justify-content: center;
 }
 
-/*---ICON---*/
-.header .nav .col img{
-    height: 50%;
+/* ========== LOGO + COMPANY NAME ========== */
+.col img {
+    height: 50px;
     cursor: pointer;
+    object-fit: contain;
 }
-.header .nav .col .company-name{
+.company-name {
     font-size: var(--font-size-small);
     cursor: pointer;
+    margin-top: 5px;
 }
 
-/*---SEARCH BOX---*/
-.header .nav .col .search-box{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    column-gap: 10px;
-    width: 50%;
-    font-size: var(--font-size-small);
-    border-bottom: 2px solid transparent;
-    transition: border-bottom 0.3s ease-in-out;
-}
-.header .nav .col .search-box:hover,
-.header .nav .col .search-box:focus-within {
-    border-bottom: 2px solid var(--color-bg-primary);
-}
-.header .nav .col .search-box .search-icon{
-    color: var(--color-text-light);
-    font-size: var(--font-size-body);
-}
-.header .nav .col .search-box input{
-    width: 150px;
-    padding: 10px;
-    text-align: center;
-    background: var(--color-bg-dark);
-    color: var(--color-text-light);
-    border: none;
-    outline: none;
-}
-.header .nav .col .search-box input::placeholder{
-    color: var(--color-text-light);
-}
-.header .nav .col .search-box input:focus::placeholder{
-    font-weight: normal;
-}
-.header .nav .col .search-box input:focus{
-    font-weight: 900;
-}
-
-/*--- DISCOVER BUTTON ---*/
-.header .nav .col .discover-btn{
+/* ========== DISCOVER BUTTON ========== */
+.discover-btn {
     color: var(--color-text-light);
     background: transparent;
     border: none;
     font-size: var(--font-size-body);
     cursor: pointer;
+    transition: color 0.3s ease-in-out;
+}
+.discover-btn:hover {
+    color: var(--color-bg-primary);
 }
 
-/*--- MENU ---*/
-.header .nav .menu{
-    display: flex;
-    flex-direction: row;
-}
-/*--- icon*/
-.header .nav .menu .menu-icon{
+/* ========== MENU ICON ========== */
+.menu-icon {
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    gap: 4.5px;
-    background: transparent;
-    position: relative;
-    right: 0;
+    gap: 5px;
 }
-.header .nav .menu .menu-icon .line{
+.line {
     width: 30px;
     height: 3px;
     background: var(--color-bg-primary);
     transition: all 0.3s ease;
 }
-.header .nav .menu .menu-icon.active .l1{
+.menu-icon.active .l1 {
     transform: rotate(45deg) translate(5px, 5px);
 }
-.header .nav .menu .menu-icon.active .l2{
+.menu-icon.active .l2 {
     opacity: 0;
 }
-.header .nav .menu .menu-icon.active .l3{
+.menu-icon.active .l3 {
     transform: rotate(-45deg) translate(5px, -5px);
 }
-/*--- menu-box*/
-.header .nav .menu .menu-box {
-    pointer-events: none;
-    height: 80vh;
-    position: absolute;
+
+/* ========== MENU BOX ========== */
+.menu-box {
+    position: fixed;
     top: 95px;
-    width: 400px;
     right: 20px;
-    transform: translateX(150%);
-    opacity: 0;
-    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+    width: 400px;
+    height: 80vh;
+    background: #2c2a2a;
     border: 10px solid var(--color-bg-primary);
     padding: 8% 0 0 10px;
-    background: #2c2a2a;
-    z-index: 1000;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+    transform: translateX(150%);
+    opacity: 0;
+    pointer-events: none;
+    z-index: 1100;
     transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
 }
-.header .nav .menu .menu-box.active {
+.menu-box.active {
     transform: translateX(0%);
     opacity: 1;
     pointer-events: auto;
 }
-.header .nav .menu .menu-box ul{
-    display: flex;
-    flex-direction: column;
-    width: 100%;
 
-}
-.header .nav .menu .menu-box ul li{
+/* ========== MENU LIST ========== */
+.menu-box ul {
+    margin: 0;
+    padding: 0;
     display: flex;
     flex-direction: column;
-    margin-top: 10px;
-    list-style: none;
 }
-.header .nav .menu .menu-box ul li a{
+.menu-box ul li {
+    list-style: none;
+    margin-bottom: 15px;
+}
+.menu-box ul li a {
     color: var(--color-text-light);
     text-decoration: none;
     font-size: var(--font-size-heading);
-    font-weight: 700;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+.menu-box ul li a:hover {
+    color: var(--color-bg-primary);
 }
 
-/*========Media Query ==========*/
+/* ========== MEDIA QUERIES ========== */
 @media (max-width: 768px) {
-    .header{
-        width: 100vw;
-    }
-    .header .nav{
+    .nav {
+        flex-direction: row;
         justify-content: space-around;
-        align-items: flex-start;
+        padding: 0 1rem;
     }
-    /*---ICON---*/
-    .header .nav .col img{
-        height: 50%;
-        margin: 0;
+
+    .col img {
+        height: 40px;
     }
-    .header .nav .col .company-name{
+
+    .company-name {
         font-size: 10px;
         display: none;
     }
-    /*--- DISCOVER BUTTON ---*/
-    .header .nav .col .discover-btn{
-        font-size: 10px;
+
+    .discover-btn {
+        font-size: 12px;
+    }
+
+    .menu-box {
+        width: 50%;
+        right: 5%;
+        height: 50vh;
+        padding-top: 20%;
+    }
+
+    .menu-box ul li a {
+        font-size: 1.2rem;
     }
 }
-
