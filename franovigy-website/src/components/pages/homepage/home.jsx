@@ -46,7 +46,9 @@ function Home() {
                     <div className="cta">
                         <p className="scroll-animate left">At Franovigy Enterprises Limited, we are dedicated
                             to providing quality services in construction,
-                            agriculture, transport, and logistics...</p>
+                            agriculture, transport, and logistics. We focus
+                            on empowering local farmers and contributing to
+                            national food security through sustainable practices.</p>
                         <button className="hero-btn scroll-animate show">Get Started</button>
                     </div>
                 </div>
