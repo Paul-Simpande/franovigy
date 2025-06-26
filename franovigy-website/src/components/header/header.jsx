@@ -63,7 +63,7 @@ function Header() {
             <div className={`menu-box ${menuOpen ? 'active' : ''}`}>
                 <ul className="menu-list">
                     <li><Link to="/">Home</Link></li>
-                    <li><Link to="/about">About</Link></li>
+                    <li><Link to="/about_us">About</Link></li>
                     <li><Link to="/contact">Contact</Link></li>
                     <li><Link to="/events">Events</Link></li>
                     <li><Link to="/video_gallery">Video Gallery</Link></li>
