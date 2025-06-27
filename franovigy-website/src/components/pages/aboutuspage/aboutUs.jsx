@@ -32,12 +32,12 @@ function AboutUs() {
             <section className="aboutus">
                 <div className="container">
                     <div className="row1">
-                        <p className="p-title">Crafting Sustainable Solutions</p>
-                        <p>Our Vision</p>
+                        <p className="p-title scroll-animate left">Crafting Sustainable Solutions</p>
+                        <p className="scroll-animate left">Our Vision</p>
                     </div>
                     <div className="row2">
                         <div className="col1">
-                            <p>At Franovigy Enterprises Limited, we are
+                            <p className="scroll-animate right">At Franovigy Enterprises Limited, we are
                                 dedicated to providing quality services
                                 in construction, agriculture, transport,
                                 and logistics sectors. Our commitment
@@ -52,7 +52,7 @@ function AboutUs() {
                                 clients and the community.</p>
                         </div>
                         <div className="col2">
-                            <p>With a focus on quality,
+                            <p className="scroll-animate right">With a focus on quality,
                             sustainability, and reliability, we strive
                             to be a trusted partner for all your
                             business needs.</p>
@@ -64,11 +64,11 @@ function AboutUs() {
             <section className="our-team">
                 <div className="container">
                     <div className="row">
-                        <p className="title">Team</p>
-                        <p className="description">Meet Our Team</p>
+                        <p className="title scroll-animate left">Team</p>
+                        <p className="description scroll-animate right">Meet Our Team</p>
                     </div>
                     <div className="det">
-                        <div className="col">
+                        <div className="col scroll-animate left">
                             <div className="image">
                                 <img src={img1} alt="image"/>
                             </div>
@@ -77,7 +77,7 @@ function AboutUs() {
                                 <p>CEO</p>
                             </div>
                         </div>
-                        <div className="col">
+                        <div className="col scroll-animate down">
                             <div className="image">
                                 <img src={img2} alt="image"/>
                             </div>
@@ -86,7 +86,7 @@ function AboutUs() {
                                 <p>CCO</p>
                             </div>
                         </div>
-                        <div className="col">
+                        <div className="col scroll-animate right">
                             <div className="image">
                                 <img src={img3} alt="image"/>
                             </div>
@@ -94,6 +94,54 @@ function AboutUs() {
                                 <p>Paul Simpande</p>
                                 <p>CTO</p>
                             </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            {/*============== JOIN US SECTION ==============*/}
+            <section className="join-us">
+                <div className="container">
+                    <div className="row">
+                        <div className="left-col scroll-animate left">
+                            <p className="title">Join</p>
+                            <p className="description">Grow With Us</p>
+                        </div>
+                        <div className="right-col scroll-animate right">
+                            <p>Interested in joining our team? We are
+                                always looking for talented individuals
+                                who share our passion for excellence
+                                and innovation. Explore our current
+                                openings and start your journey with
+                                Franovigy Enterprises Limited.</p>
+                        </div>
+                    </div>
+                    <div className="row r2">
+                        <div className="col scroll-animate left">
+                            <p className="title">Career Opportunities</p>
+                            <p className="description">Discover exciting
+                                career opportunities at Franovigy
+                                Enterprises Limited that will challenge,
+                                motivate, and inspire you to grow both
+                                personally and professionally.</p>
+                        </div>
+                        <div className="col scroll-animate down">
+                            <p className="title">Employee Benefits</p>
+                            <p className="description">As a member of
+                                our team, you will enjoy competitive
+                                compensation packages, professional
+                                development opportunities, and a
+                                supportive work environment that
+                                values collaboration and creativity.</p>
+                        </div>
+                        <div className="col scroll-animate right">
+                            <p className="title">Work Culture and Values</p>
+                            <p className="description">At Franovigy
+                                Enterprises Limited, we foster a
+                                culture of respect, integrity, and
+                                teamwork. Our core values drive
+                                every aspect of our business and
+                                create a positive and inclusive
+                                work environment for all employees.</p>
                         </div>
                     </div>
                 </div>
