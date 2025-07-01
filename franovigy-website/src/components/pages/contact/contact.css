@@ -117,3 +117,14 @@
     color: var(--color-red);
     transform: translateY(-20px);
 }
+@media (max-width: 760px) {
+    .contact-section {
+        padding: 90px 10px;
+    }
+    .contact-section .container .row,
+    .contact-section .container .row form input,
+    .contact-section .container .row form textarea{
+        width: 100%;
+    }
+
+}
