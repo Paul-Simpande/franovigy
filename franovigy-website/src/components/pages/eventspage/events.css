@@ -1,0 +1,195 @@
+.events {
+    width: 100%;
+    color: var(--color-text-light);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    background-color: var(--color-bg-dark);
+    padding: 90px 50px;
+}
+
+.events .container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.events .container .title {
+    width: 100%;
+    padding-bottom: 20px;
+    border-bottom: 2px solid var(--color-text-light);
+}
+
+.events .container .title p {
+    font-size: var(--font-size-hero-title);
+    font-family: var(--font-sub);
+    padding: 0;
+    margin: 0;
+}
+
+.events .container .content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-family: var(--font-sub);
+}
+
+.events .container .content .event {
+    width: 100%;
+    display: flex;
+    border-bottom: 2px solid var(--color-text-light);
+    padding: 50px 0;
+}
+
+.events .container .content .event .left-col {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.events .container .content .event .left-col p {
+    font-size: var(--font-size-body);
+    margin: 0 0;
+}
+
+.events .container .content .event .left-col .title {
+    border: none;
+    font-size: var(--font-size-heading);
+    margin: 0;
+    padding: 0;
+    display: none;
+}
+
+.events .container .content .event .left-col .more-info {
+    display: flex;
+    flex-direction: column;
+    margin: 10px 0;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: all 0.4s ease;
+}
+
+
+.events .container .content .event .left-col .more-info.show-info {
+    max-height: 300px;
+    opacity: 1;
+}
+
+.events .container .content .event .left-col .more-info .description {
+    margin: 10px 0;
+}
+
+.events .container .content .event .left-col .drop-down,
+.events .container .content .event .left-col .close-up {
+    cursor: pointer;
+    margin-left: 5px;
+    transition: all 0.3s ease-in-out;
+}
+/* Locale default visible, drop-down hidden */
+.events .container .content .event .left-col .locale {
+    display: inline;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.events .container .content .event .left-col .drop-down {
+    display: none;
+}
+
+/* On hover: hide locale, show drop-down if not expanded */
+.events .container .content .event:hover .left-col .locale {
+    display: none;
+}
+
+.events .container .content .event:hover .left-col .drop-down {
+    display: inline-block;
+}
+
+/* Ensure toggle logic overrides hover */
+.events .container .content .event .left-col .drop-down.hide {
+    display: none !important;
+}
+
+.events .container .content .event .left-col .close-up {
+    display: none;
+}
+
+.events .container .content .event .left-col .close-up.show {
+    display: inline-block;
+}
+
+/* Keep previous transitions intact */
+.events .container .content .event .left-col .more-info {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: all 0.4s ease-in-out;
+}
+
+.events .container .content .event .left-col .more-info.show-info {
+    max-height: 300px;
+    opacity: 1;
+}
+
+.events .container .content .event .left-col .more-label {
+    display: none;
+    cursor: pointer;
+    font-size: var(--font-size-body);
+    text-decoration: underline;
+    color: var(--color-text-light);
+    margin-top: 5px;
+}
+
+
+.events .container .content .event .right-col {
+    display: flex;
+}
+
+.events .container .content .event .right-col .rvsp-btn {
+    height: 40px;
+    width: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: var(--color-bg-primary);
+    border: 2px solid var(--color-bg-primary);
+    transition: all 200ms ease-in-out;
+}
+
+.events .container .content .event .right-col .rvsp-btn a {
+    text-decoration: none;
+    color: var(--color-text-primary);
+}
+
+.events .container .content .event .right-col .rvsp-btn:hover {
+    background: var(--color-orange);
+}
+
+@media (max-width: 760px) {
+    .events .container .content .event{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    .events .container .content .event .left-col .contert {
+        display: none;
+    }
+
+    .events .container .content .event .left-col .more-label {
+        display: inline-block;
+    }
+
+    .events .container .content .event .left-col .title{
+        display: inline;
+    }
+
+    .events .container .content .event .right-col .rvsp-btn{
+        width: 100%;
+    }
+
+
+}

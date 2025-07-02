@@ -30,3 +30,42 @@
     opacity: 1;
     transform: translateX(0) translateY(0);
 }
+
+/* Reveal from the top (like unfolding downward) */
+.scroll-animate.reveal-top {
+    transform: scaleY(0);
+    transform-origin: top;
+    opacity: 0;
+}
+
+/* Reveal from the bottom (like unfolding upward) */
+.scroll-animate.reveal-bottom {
+    transform: scaleY(0);
+    transform-origin: bottom;
+    opacity: 0;
+}
+
+/* Reveal from the left (like expanding sideways from left) */
+.scroll-animate.reveal-left {
+    transform: scaleX(0);
+    transform-origin: left;
+    opacity: 0;
+}
+
+/* Reveal from the right (like expanding sideways from right) */
+.scroll-animate.reveal-right {
+    transform: scaleX(0);
+    transform-origin: right;
+    opacity: 0;
+}
+
+/* Final state for reveal animations */
+.scroll-animate.reveal-top.show,
+.scroll-animate.reveal-bottom.show,
+.scroll-animate.reveal-left.show,
+.scroll-animate.reveal-right.show {
+    transform: scaleX(1) scaleY(1);
+    opacity: 1;
+    transition: transform 0.8s ease-out, opacity 0.8s ease-out;
+}
+
