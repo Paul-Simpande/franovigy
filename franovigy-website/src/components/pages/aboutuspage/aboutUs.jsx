@@ -1,11 +1,11 @@
-import './aboutUs.css'
-import '../../../scrollAnimation/scrollAnimation.css'
-import img1 from '../../../assets/About-Our Team-1.jpg'
-import img2 from '../../../assets/About-Our Team-2.jpg'
-import img3 from '../../../assets/About-Our Team-3.jpg'
-import {useEffect} from "react";
-function AboutUs() {
+import './aboutUs.css';
+import '../../../scrollAnimation/scrollAnimation.css';
+import { useEffect } from "react";
 
+import aboutContent from '../../../constants/aboutConstants/aboutContent';
+import teamData from '../../../constants/aboutConstants/teamData';
+
+function AboutUs() {
     useEffect(() => {
         const elements = document.querySelectorAll('.scroll-animate');
 
@@ -32,35 +32,21 @@ function AboutUs() {
             <section className="aboutus">
                 <div className="container">
                     <div className="row1">
-                        <p className="p-title scroll-animate left">Crafting Sustainable Solutions</p>
-                        <p className="scroll-animate left">Our Vision</p>
+                        <p className="p-title scroll-animate left">{aboutContent.vision.title}</p>
+                        <p className="scroll-animate left">{aboutContent.vision.subtitle}</p>
                     </div>
                     <div className="row2">
                         <div className="col1">
-                            <p className="scroll-animate right">At Franovigy Enterprises Limited, we are
-                                dedicated to providing quality services
-                                in construction, agriculture, transport,
-                                and logistics sectors. Our commitment
-                                to excellence, durability, and timeliness
-                                sets us apart in the industry. We pride
-                                ourselves on empowering local farmers
-                                and contributing to national food
-                                security through sustainable and
-                                innovative practices. Our mission is to
-                                make a positive impact by creating
-                                lasting solutions that benefit both our
-                                clients and the community.</p>
+                            <p className="scroll-animate right">{aboutContent.vision.paragraphs[0]}</p>
                         </div>
                         <div className="col2">
-                            <p className="scroll-animate right">With a focus on quality,
-                            sustainability, and reliability, we strive
-                            to be a trusted partner for all your
-                            business needs.</p>
+                            <p className="scroll-animate right">{aboutContent.vision.paragraphs[1]}</p>
                         </div>
                     </div>
                 </div>
             </section>
-            {/*============== MEET OUR SECTION ==============*/}
+
+            {/*============== MEET OUR TEAM SECTION ==============*/}
             <section className="our-team">
                 <div className="container">
                     <div className="row">
@@ -68,85 +54,45 @@ function AboutUs() {
                         <p className="description scroll-animate right">Meet Our Team</p>
                     </div>
                     <div className="det">
-                        <div className="col scroll-animate left">
-                            <div className="image">
-                                <img src={img1} alt="image"/>
+                        {teamData.map((member, index) => (
+                            <div className={`col scroll-animate ${index === 0 ? 'left' : index === 1 ? 'down' : 'right'}`} key={index}>
+                                <div className="image">
+                                    <img src={member.image} alt={member.name} />
+                                </div>
+                                <div className="detail">
+                                    <p>{member.name}</p>
+                                    <p>{member.role}</p>
+                                </div>
                             </div>
-                            <div className="detail">
-                                <p>Virginia Simpande</p>
-                                <p>CEO</p>
-                            </div>
-                        </div>
-                        <div className="col scroll-animate down">
-                            <div className="image">
-                                <img src={img2} alt="image"/>
-                            </div>
-                            <div className="detail">
-                                <p>Lucky Mbewe</p>
-                                <p>CCO</p>
-                            </div>
-                        </div>
-                        <div className="col scroll-animate right">
-                            <div className="image">
-                                <img src={img3} alt="image"/>
-                            </div>
-                            <div className="detail">
-                                <p>Paul Simpande</p>
-                                <p>CTO</p>
-                            </div>
-                        </div>
+                        ))}
                     </div>
                 </div>
             </section>
+
             {/*============== JOIN US SECTION ==============*/}
             <section className="join-us">
                 <div className="container">
                     <div className="row">
                         <div className="left-col scroll-animate left">
-                            <p className="title">Join</p>
-                            <p className="description">Grow With Us</p>
+                            <p className="title">{aboutContent.join.left.title}</p>
+                            <p className="description">{aboutContent.join.left.description}</p>
                         </div>
                         <div className="right-col scroll-animate right">
-                            <p>Interested in joining our team? We are
-                                always looking for talented individuals
-                                who share our passion for excellence
-                                and innovation. Explore our current
-                                openings and start your journey with
-                                Franovigy Enterprises Limited.</p>
+                            <p>{aboutContent.join.right}</p>
                         </div>
                     </div>
                     <div className="row r2">
-                        <div className="col scroll-animate left">
-                            <p className="title">Career Opportunities</p>
-                            <p className="description">Discover exciting
-                                career opportunities at Franovigy
-                                Enterprises Limited that will challenge,
-                                motivate, and inspire you to grow both
-                                personally and professionally.</p>
-                        </div>
-                        <div className="col scroll-animate down">
-                            <p className="title">Employee Benefits</p>
-                            <p className="description">As a member of
-                                our team, you will enjoy competitive
-                                compensation packages, professional
-                                development opportunities, and a
-                                supportive work environment that
-                                values collaboration and creativity.</p>
-                        </div>
-                        <div className="col scroll-animate right">
-                            <p className="title">Work Culture and Values</p>
-                            <p className="description">At Franovigy
-                                Enterprises Limited, we foster a
-                                culture of respect, integrity, and
-                                teamwork. Our core values drive
-                                every aspect of our business and
-                                create a positive and inclusive
-                                work environment for all employees.</p>
-                        </div>
+                        {aboutContent.join.highlights.map((item, index) => (
+                            <div className={`col scroll-animate ${index === 0 ? 'left' : index === 1 ? 'down' : 'right'}`} key={index}>
+                                <p className="title">{item.title}</p>
+                                <p className="description">{item.description}</p>
+                            </div>
+                        ))}
                     </div>
                 </div>
             </section>
         </>
     );
 }
+
 export default AboutUs;
