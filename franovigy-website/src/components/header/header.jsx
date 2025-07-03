@@ -64,10 +64,10 @@ function Header() {
                 <ul className="menu-list">
                     <li><Link to="/">Home</Link></li>
                     <li><Link to="/about_us">About</Link></li>
+                    <li><Link to="/services">Services</Link></li>
                     <li><Link to="/contact">Contact</Link></li>
                     <li><Link to="/events">Events</Link></li>
                     <li><Link to="/video_gallery">Video Gallery</Link></li>
-                    <li><Link to="/blog">Blog</Link></li>
                     <li><Link to="/search_results">Search Results</Link></li>
                     <li><Link to="/book_online">Book Online</Link></li>
                     <li><Link to="/portfolio">Portfolio</Link></li>

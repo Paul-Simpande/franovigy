@@ -1,0 +1,114 @@
+.services-section{
+    width: 100vw;
+    color: var(--color-text-primary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    background-color: var(--color-bg-primary);
+    padding: 90px 50px;
+    font-family: var(--font-sub);
+}
+
+.intro-section{
+    padding: 90px 50px 0 50px;
+}
+
+.intro-section .banner{
+    margin-top: 10px;
+    padding: 5% 25%;
+    background-image: url('../../../assets/services_banner.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.intro-section .banner .title{
+    font-size: var(--font-size-hero-sub);
+    color: var(--color-text-primary);
+    background: var(--color-bg-primary);
+    padding: 10px 20px;
+}
+
+.services{
+    padding: 90px 150px;
+}
+
+.services-section .container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+    gap: 20px;
+    padding: 20px;
+}
+
+.services-section .container .service{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 20px;
+    background: transparent;
+    border-radius: 10px;
+}
+
+.services-section .container .service .service-icon,
+.services-section .container .service p{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.services-section .container .service .service-icon{
+    font-size: 40px;
+}
+
+.services-section .container .service .name{
+    font-size: var(--font-size-cta);
+}
+
+.services-section .container .service .description{
+    font-size: var(--font-size-small);
+}
+
+@media (max-width: 1024px) {
+    .services-section .container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        padding: 20px;
+    }
+}
+
+@media (max-width: 760px) {
+    .services-section{
+        padding: 90px 10px 10px;
+    }
+    .services{
+        padding: 10px 10px;
+    }
+    .services-section .container {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 20px;
+        padding: 20px;
+    }
+    .intro-section .banner{
+        margin: 10px 0 0 0;
+        padding: 5% 15%;
+        width: 100%;
+    }
+
+    .intro-section{
+        padding: 90px 0 0 0;
+    }
+}
