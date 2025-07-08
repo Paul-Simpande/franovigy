@@ -166,7 +166,8 @@
 }
 
 .events .container .content .event .right-col .rvsp-btn:hover {
-    background: var(--color-orange);
+    background: var(--color-red);
+    border: 2px solid var(--color-orange);
 }
 
 @media (max-width: 760px) {
