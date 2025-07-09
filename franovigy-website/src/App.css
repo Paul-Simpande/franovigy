@@ -1,25 +1,22 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+/* ===== Import Fonts ===== */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&family=PT+Serif:wght@400;700&family=Roboto:wght@100..900&display=swap');
 
+/* ===== Root Variables ===== */
 :root {
-    /* === Font Families === */
     --font-title: 'Montserrat', sans-serif;
     --font-sub: 'PT Serif', serif;
     --font-body: 'Roboto', sans-serif;
 
-    /* === Color Variables === */
     --color-white: #ffffff;
     --color-black: #000000;
-
-    --color-bg-primary: var(--color-white);
-    --color-text-primary: var(--color-black);
-
-    --color-bg-dark: var(--color-black);
-    --color-text-light: var(--color-white);
-
     --color-red: #e53935;
     --color-orange: #fb8c00;
 
-    /* === Font Sizes === */
+    --color-bg-primary: var(--color-white);
+    --color-text-primary: var(--color-black);
+    --color-bg-dark: var(--color-black);
+    --color-text-light: var(--color-white);
+
     --font-size-hero-title: 4rem;
     --font-size-hero-sub: 3rem;
     --font-size-heading: 2rem;
@@ -29,7 +26,9 @@
     --font-size-small: 0.875rem;
 }
 
-/* Tablet */
+/* ===== Responsive Font Scaling ===== */
+
+/* Tablet (max-width: 1024px) */
 @media (max-width: 1024px) {
     :root {
         --font-size-hero-title: 3rem;
@@ -42,7 +41,7 @@
     }
 }
 
-/* Phone */
+/* Phone (max-width: 768px) */
 @media (max-width: 768px) {
     :root {
         --font-size-hero-title: 2.25rem;
@@ -55,12 +54,19 @@
     }
 }
 
+/* ===== Global Resets ===== */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
 body {
+    margin: 0;
+    padding: 0;
     font-family: var(--font-body);
     font-size: var(--font-size-body);
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
     background-color: var(--color-bg-primary);
     color: var(--color-text-primary);
+    overflow-x: hidden;
 }
