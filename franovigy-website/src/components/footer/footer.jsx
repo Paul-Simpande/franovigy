@@ -5,6 +5,7 @@ import addFormImage from "../../assets/add_form.png"
 import '../../scrollAnimation/scrollAnimation.css';
 import './footer.css'
 import {useEffect} from "react";
+import privacyPolicy from "../pages/privacypolicypage/privacy_Policy.jsx";
 
 function Footer() {
 
@@ -63,10 +64,10 @@ function Footer() {
                             </div>
                         </Link>
                         <div className="legal">
-                            <Link to={"/"} className="scroll-animate right">Privacy Policy</Link>
-                            <Link to={"/"} className="scroll-animate right">Accessibility Statement</Link>
-                            <Link to={"/"} className="scroll-animate right">Terms & Conditions</Link>
-                            <Link to={"/"} className="scroll-animate right">Refund Policy</Link>
+                            <Link to={"/privacy_Policy"} className="scroll-animate right">Privacy Policy</Link>
+                            <Link to={"/accessibility_statement"} className="scroll-animate right">Accessibility Statement</Link>
+                            <Link to={"/terms_conditions"} className="scroll-animate right">Terms & Conditions</Link>
+                            <Link to={"/refund_policy"} className="scroll-animate right">Refund Policy</Link>
                         </div>
                         <p className="scroll-animate down">&#169;2025 by Franovigy Enterprises Limited.</p>
                     </div>
