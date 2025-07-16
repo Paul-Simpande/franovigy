@@ -12,6 +12,8 @@ import Privacy_Policy from "./components/pages/privacypolicypage/privacy_Policy.
 import TermsConditions from "./components/pages/terms&conditions/termsConditions.jsx";
 import Refund_Policy from "./components/pages/refundpolicy/refundPolicy.jsx";
 import Accessibility_Statement from "./components/pages/accesbilitystatement/accessibilityStatement.jsx";
+import Event_Detail from "./components/pages/eventspage/eventdetail/eventdetail.jsx";
+import NotFound from "./components/shared/norfound.jsx";
 import './App.css';
 
 function App() {
@@ -30,6 +32,8 @@ function App() {
                 <Route path="/terms_conditions" element={<TermsConditions/>}/>
                 <Route path="/refund_policy" element={<Refund_Policy/>}/>
                 <Route path="/accessibility_statement" element={<Accessibility_Statement/>}/>
+                <Route path="/eventdetail/:id" element={<Event_Detail/>}/>
+                <Route path="*" element={<NotFound />} />
             </Routes>
             <Footer />
         </Router>
