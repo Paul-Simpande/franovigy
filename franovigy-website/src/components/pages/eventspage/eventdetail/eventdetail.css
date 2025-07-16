@@ -1,0 +1,278 @@
+.eventdetail-section {
+    width: 100%;
+    display: flex;
+    align-items: stretch;
+    gap: 40px;
+    box-sizing: border-box;
+    background-color: var(--color-bg-primary);
+    color: var(--color-text-primary);
+    padding: 90px 50px;
+}
+
+.eventdetail-section .container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0 200px;
+}
+
+.eventdetail-section .container p{
+    width: 100%;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.eventdetail-section .container .title {
+    font-size: var(--font-size-hero-title);
+    font-weight: 300;
+    font-family: var(--font-title);
+}
+
+.eventdetail-section .container .title,
+.eventdetail-section .container .date-location,
+.eventdetail-section .container .moto{
+    margin-bottom: 20px;
+}
+
+.eventdetail-section .container .date-location,
+.eventdetail-section .container .moto,
+.eventdetail-section .container .subtitle,
+.eventdetail-section .container .detail{
+    font-weight: 300;
+    font-family: var(--font-sub);
+}
+
+.eventdetail-section .container .date-location {
+    font-size: var(--font-size-cta);
+}
+
+.eventdetail-section .container .moto {
+    font-size: var(--font-size-body);
+    width: 55%;
+}
+
+.eventdetail-section .container .subtitle {
+    font-size: var(--font-size-subheading);
+    text-align: left;
+    font-weight: 100;
+    margin: 20px 0 10px 0;
+}
+
+.eventdetail-section .container .detail {
+    font-size: var(--font-size-body);
+    text-align: left;
+}
+
+.eventdetail-section .container .d-1 {
+    white-space: pre-line;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.eventdetail-section .container .d-1 .toggle-link {
+    display: inline;
+    color: #007bff;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 1px;
+}
+
+.eventdetail-section .container .d-1 .toggle-link:hover {
+    text-decoration: underline;
+}
+
+
+.eventdetail-section .container .register-btn {
+    font-size: var(--font-size-cta);
+    font-weight: 700;
+    font-family: var(--font-title);
+    padding: 15px 70px;
+    margin: 25px 0;
+    border: 1px solid var(--color-black);
+    background: #2c2a2a;
+    color: var(--color-text-light);
+    transition: all 0.3s ease;
+}
+
+.eventdetail-section .container .register-btn:hover {
+    background-color: var(--color-bg-primary);
+    color: var(--color-text-primary);
+}
+
+.eventdetail-section .container .secondary{
+    align-self: flex-start;
+}
+
+.eventdetail-section .container .banner {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+.eventdetail-section .container .event-map {
+    width: 100%;
+    height: 400px;
+}
+
+/* ================= POPUP BACKDROP ================= */
+.eventdetail-section .pop-up {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    overflow-y: auto;
+    padding: 20px;
+}
+
+/* SHOW STATE */
+.eventdetail-section .pop-up.show {
+    display: flex;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* ================= FORM CONTAINER ================= */
+.eventdetail-section .pop-up form {
+    padding: 40px;
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border-radius: 21px;
+    background: linear-gradient(145deg, #e60000, #ff0000);
+    box-shadow: 33px 33px 66px #8a0000, -33px -33px 66px #ff0000;
+    transform: scale(0.9);
+    opacity: 0;
+    transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+/* FORM SHOW ANIMATION */
+.eventdetail-section .pop-up.show form {
+    transform: scale(1);
+    opacity: 1;
+}
+
+/* ================= FORM TEXT STYLES ================= */
+.eventdetail-section .pop-up form .title {
+    font-size: var(--font-size-heading);
+    text-align: center;
+    margin-bottom: 15px;
+    color: var(--color-text-primary);
+    font-family: var(--font-title);
+    font-weight: 700;
+}
+
+.eventdetail-section .pop-up form label {
+    font-size: var(--font-size-body);
+    color: var(--color-text-light);
+    font-family: var(--font-sub);
+    font-weight: 300;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+/* ================= FORM INPUT STYLES ================= */
+.eventdetail-section .pop-up form input {
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    font-size: var(--font-size-body);
+    color: var(--color-text-primary);
+    font-family: var(--font-sub);
+    font-weight: 300;
+    background-color: var(--color-bg-primary);
+    outline: none;
+    transition: box-shadow 0.3s ease, border 0.3s ease;
+}
+
+.eventdetail-section .pop-up form input:hover {
+    border: 2px double var(--color-bg-dark);
+}
+
+.eventdetail-section .pop-up form input:focus {
+    border: none;
+    border-bottom: 2px solid var(--color-bg-dark);
+    box-shadow: 0 0 10px var(--color-bg-dark);
+}
+
+/* ================= INPUT ERROR STATE ================= */
+.eventdetail-section .pop-up form input:invalid {
+    border-bottom: 2px solid #f88c8c;
+    background-color: rgba(255, 181, 181, 0.58);
+}
+
+/* ================= BUTTON STYLES ================= */
+.eventdetail-section .pop-up form button {
+    padding: 12px;
+    border-radius: 5px;
+    border: none;
+    font-size: var(--font-size-body);
+    color: var(--color-text-primary);
+    font-family: var(--font-sub);
+    font-weight: 900;
+    background-color: var(--color-bg-primary);
+    margin-top: 15px;
+    cursor: pointer;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.eventdetail-section .pop-up form button:hover {
+    background: var(--color-bg-dark);
+    color: var(--color-text-light);
+}
+
+@media (max-width: 720px) {
+    .eventdetail-section {
+        padding: 90px 0;
+    }
+    .eventdetail-section .container {
+        padding: 0 10px;
+    }
+    .eventdetail-section .container .moto {
+        width: 100%;
+    }
+
+    .eventdetail-section .pop-up form {
+        padding: 30px 20px;
+        width: 100%;
+        max-width: 95vw;
+        border-radius: 16px;
+    }
+
+    .eventdetail-section .pop-up form .title {
+        font-size: 1.2rem;
+    }
+
+    .eventdetail-section .pop-up form button {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 1024px) {
+    .eventdetail-section {
+        padding: 90px 0;
+    }
+    .eventdetail-section .container {
+        padding: 0 10px;
+    }
+    .eventdetail-section .container .moto {
+        width: 100%;
+    }
+}
